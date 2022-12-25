@@ -1,4 +1,9 @@
 # TA-PPB-SMT3-CheckInAja13294
+NAMA        : Septian Ade Hidayat
+NIM         : A11.2021.13294
+MATA KULIAH : Pemrograman Perangkat Bergerak
+KELOMPOK    : A11.4314
+
 Memiliki 4 Activity :
 1. Halaman Utama
   - Menampilkan Deskripsi Aplikasi
