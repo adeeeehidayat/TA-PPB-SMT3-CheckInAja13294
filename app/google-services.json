@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "695507981979",
+    "project_id": "check-in-aja-13294-70246",
+    "storage_bucket": "check-in-aja-13294-70246.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:695507981979:android:382ebdea0fd73e95c1583e",
+        "android_client_info": {
+          "package_name": "com.example.checkinaja13294"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "695507981979-6k2r9p0c1sqrr7rbs0uucv5g3c8lpkk8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyALq7RM6bH0AnJ5pwzSWQzxy6ysDYxBPsY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "695507981979-6k2r9p0c1sqrr7rbs0uucv5g3c8lpkk8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

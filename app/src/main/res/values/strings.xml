@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Check In Aja 13294</string>
+    
+    <string-array name="tipeKamar">
+        <item>Single Room</item>
+        <item>Double Room</item>
+        <item>Twin Room</item>
+        <item>Junior Suite</item>
+        <item>Senior Suite</item>
+    </string-array>
+
+</resources>
