@@ -15,6 +15,8 @@ public class ActivityTampilanKamar extends AppCompatActivity {
     ImageView img;
     TextView tv1, tv2, tv3, tv4, tv5, tv6, tv7;
 
+    // fungsi untuk button pesan kamar
+    // akan diarahkan ke activity pesan kamar
     public void pesanKamar(View view) {
         Intent intent = new Intent(ActivityTampilanKamar.this, ActivityPesanKamar.class);
         startActivity(intent);
@@ -48,6 +50,7 @@ public class ActivityTampilanKamar extends AppCompatActivity {
         tv6 = findViewById(R.id.tv6);
         tv7 = findViewById(R.id.tv7);
 
+        // menampilkan isi konten tampilan kamar dari arraylist
         Intent intent = getIntent();
         String nama = intent.getExtras().getString("nama");
         String harga = intent.getExtras().getString("harga");

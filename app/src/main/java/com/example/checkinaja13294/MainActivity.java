@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
         tampilDataTamu();
     }
 
+    // menampilkan data tamu dari database firebase
     private void tampilDataTamu() {
         database.child("dataTamu").addValueEventListener(new ValueEventListener() {
             @Override
@@ -60,20 +61,28 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    // fungsi untuk button lihat kamar
+    // diarahkan ke activity pilih kamar
     public void pindahKamar(View view) {
         Intent intent = new Intent(MainActivity.this, ActivityPilihKamar.class);
         startActivity(intent);
     }
+    // fungsi untuk button lihat lokasi
+    // diarahkan ke aplikasi google maps sesuai koordinat
     public void showMap (View view){
         Uri uri = Uri.parse("geo:-6.982628,110.409207=");
         Intent intent = new Intent(Intent.ACTION_VIEW, uri);
         startActivity(intent);
     }
+    // fungsi untuk button telepon
+    // diarahkan ke aplikasi telepon
     public void telepon (View view){
         Uri uri = Uri.parse("tel:089644135314");
         Intent it = new Intent(Intent.ACTION_VIEW, uri);
         startActivity(it);
     }
+    // fungsi untuk button email
+    // diarahkan untuk mengirim pesan lewat email
     public void email (View view){
         Intent intent = new Intent(Intent.ACTION_SEND);
         intent.setType("text/plain");

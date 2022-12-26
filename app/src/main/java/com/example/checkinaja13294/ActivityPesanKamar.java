@@ -44,6 +44,8 @@ public class ActivityPesanKamar extends AppCompatActivity {
         edtJmlAnak = findViewById(R.id.edtJmlAnak);
         btnPesanTamu = findViewById(R.id.btnPesanTamu);
 
+        // fungsi untuk button pesan sekarang
+        // akan memasukkan data tamu ke dalam database firebase
         btnPesanTamu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -84,6 +86,7 @@ public class ActivityPesanKamar extends AppCompatActivity {
                             getEmail, getNoTelpon, getCekin, getCekout, getJmlDewasa, getJmlAnak
                     )).addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
+                        // jika berhasil input data maka munculkan pesan "Data berhasil disimpan" dengan toast
                         public void onSuccess(Void unused) {
                             Toast.makeText(ActivityPesanKamar.this, "Data berhasil disimpan", Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(ActivityPesanKamar.this, MainActivity.class));
@@ -91,6 +94,7 @@ public class ActivityPesanKamar extends AppCompatActivity {
                         }
                     }).addOnFailureListener(new OnFailureListener() {
                         @Override
+                        // jika gagal input data maka munculkan pesan "Gagal menyimpan data..." dengan toast
                         public void onFailure(@NonNull Exception e) {
                             Toast.makeText(ActivityPesanKamar.this, "Gagal menyimpan data...", Toast.LENGTH_SHORT).show();
                         }

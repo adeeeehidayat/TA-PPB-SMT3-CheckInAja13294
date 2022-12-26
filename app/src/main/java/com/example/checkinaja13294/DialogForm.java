@@ -68,6 +68,9 @@ public class DialogForm extends DialogFragment {
         txtCekout.setText(cekout);
         txtJmlDewasa.setText(jmlDewasa);
         txtJmlAnak.setText(jmlAnak);
+
+        // jika button pesan sekarang di klik pada cardview update data tamu
+        // maka data tamu akan terupdate di realtime database firebase
         btnPesanTamu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -82,15 +85,17 @@ public class DialogForm extends DialogFragment {
                 String jmlDewasa = txtJmlDewasa.getText().toString();
                 String jmlAnak = txtJmlAnak.getText().toString();
                 if (pilih.equals("Ubah")){
-                    database.child("dataTamu").child(key).setValue(new ModelPesanKamar(namaTamu, noTelpon, email,
-                            jenisKelamin, kewarganegaraan, tipeKamar, cekin, cekout, jmlDewasa, jmlAnak)).addOnSuccessListener(new OnSuccessListener<Void>() {
+                    database.child("dataTamu").child(key).setValue(new ModelPesanKamar(tipeKamar, namaTamu, jenisKelamin,
+                            kewarganegaraan, email, noTelpon, cekin, cekout, jmlDewasa, jmlAnak)).addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
                         public void onSuccess(Void unused) {
+                            // jika berhasil update data tamu tampilkan pesan "Berhasil update data"
                             Toast.makeText(view.getContext(), "Berhasil update data", Toast.LENGTH_SHORT).show();
                         }
                     }).addOnFailureListener(new OnFailureListener() {
                         @Override
                         public void onFailure(@NonNull Exception e) {
+                            // jika gagal update data tamu tampilkan pesan "Gagal update data"
                             Toast.makeText(view.getContext(), "Gagal update data", Toast.LENGTH_SHORT).show();
                         }
                     });

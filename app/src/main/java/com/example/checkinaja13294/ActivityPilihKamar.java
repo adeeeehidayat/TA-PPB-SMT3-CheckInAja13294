@@ -43,7 +43,7 @@ public class ActivityPilihKamar extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
+        // list kamar yang tersedia dengan arraylist
         arrayList.add(new Model(R.drawable.single_room,
                 "Single Room",
                 "Rp. 255.000",

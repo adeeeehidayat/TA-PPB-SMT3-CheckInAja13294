@@ -36,6 +36,7 @@ public class AdapterDataTamu extends RecyclerView.Adapter<AdapterDataTamu.ViewHo
     }
     @NonNull
     @Override
+    // menampilkan layout data tamu
     public AdapterDataTamu.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         View viewItem = inflater.inflate(R.layout.layout_data_tamu, parent, false);
@@ -55,9 +56,12 @@ public class AdapterDataTamu extends RecyclerView.Adapter<AdapterDataTamu.ViewHo
         holder.txtCekout.setText(data.getCekout());
         holder.txtJmlDewasa.setText(data.getJmlDewasa());
         holder.txtJmlAnak.setText(data.getJmlAnak());
+
+        // fungsi button hapus data tamu
         holder.btn_hapus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // jika tekan iya maka data akan dihapus
                 AlertDialog.Builder builder = new AlertDialog.Builder(activity);
                 builder.setPositiveButton("Iya", new DialogInterface.OnClickListener() {
                     @Override
@@ -65,15 +69,18 @@ public class AdapterDataTamu extends RecyclerView.Adapter<AdapterDataTamu.ViewHo
                         database.child("dataTamu").child(data.getKey()).removeValue().addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void unused) {
+                                // jika berhasil menghapus data tampilkan pesan "Data berhasil dihapus"
                                 Toast.makeText(activity, "Data berhasil dihapus", Toast.LENGTH_SHORT).show();
                             }
                         }).addOnFailureListener(new OnFailureListener() {
                             @Override
                             public void onFailure(@NonNull Exception e) {
+                                // jika gagal menghapus data tampilkan pesan "Gagal menghapus data"
                                 Toast.makeText(activity, "Gagal menghapus data", Toast.LENGTH_SHORT).show();
                             }
                         });
                     }
+                // jika tekan tidak maka akan dismiss kembali ke menu utama
                 }).setNegativeButton("Tidak", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
@@ -84,6 +91,8 @@ public class AdapterDataTamu extends RecyclerView.Adapter<AdapterDataTamu.ViewHo
             }
         });
 
+        // menampilkan cardview untuk update data tamu
+        // dengan melakukan tekan & tahan pada data tamu
         holder.card_tamu.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {

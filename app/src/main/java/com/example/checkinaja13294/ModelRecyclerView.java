@@ -33,6 +33,7 @@ public class ModelRecyclerView extends RecyclerView.Adapter<ModelRecyclerView.Vi
     }
 
     @Override
+    // fungsi untuk menampilkan list kamar yang tersedia
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.imageView.setImageResource(arrayList.get(position).getImage());
         holder.textView1.setText(arrayList.get(position).getNama());
@@ -40,7 +41,6 @@ public class ModelRecyclerView extends RecyclerView.Adapter<ModelRecyclerView.Vi
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Toast.makeText(context,"Detail Menu ke "+position,Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(context, ActivityTampilanKamar.class);
                 intent.putExtra("foto", arrayList.get(position).getImage());
                 intent.putExtra("nama", arrayList.get(position).getNama());
